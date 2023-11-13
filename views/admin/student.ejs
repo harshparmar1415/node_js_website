@@ -1,0 +1,109 @@
+<%- include('header.ejs') -%>
+
+<!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4"><div class="abc">Students</div> </h6>
+                            <% if(data.length) { %>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Student Name</th>
+                                        <th scope="col">Phone Number</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Course</th>
+                                        <th scope="col">Sem</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Password</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i = 0; i< data.length; i++) { %>
+                                    <tr>
+                                        <th scope="row"><%= (i+1) %></th>
+                                        <td><%= data[i].sname%></td>
+                                        <td><%= data[i].mobile%></td>
+                                        <td><%= data[i].email%></td>
+                                        <td><%= data[i].course%></td>
+                                        <td><%= data[i].sem%></td>
+                                    
+                                           <td><textarea rows="2" wrap="soft" class="comment" readonly><%= data[i].address%></textarea></td>
+                                           <td><input type="password" class="comment"  value="<%= data[i].password %>" readonly/>  </td>
+                                           <td>
+                                            <a class="btn btn-outline-success edit" href="../admin/sedit/<%=data[i].id%>">Edit</a>
+                                            <a class="btn btn-outline-danger delete" onclick="return confirm('Are you sure want to delete this record?')" href="/admin/sdelete/<%=data[i].id%>">Delete</a> 
+                                        </td>
+                                    </tr>
+                                   <% } %>
+                                </tbody>
+                            </table>
+                            <% } %>
+                            <% if(!data.length) { %>
+                                <p class="text-center">No users found!</p>
+                            <% } %>
+                        </div>
+                    
+
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Add Student</h6>
+                         
+                            
+                                <% if (messages.error) { %>
+                                <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+                                <% } %>
+                            <form action="/admin/student" method="post" >
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Student Name</label>
+                                    <input type="text" name="sname" class="form-control" >
+                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Contact Number</label>
+                                    <input type="number" name="mobile" class="form-control" >
+                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" name="course">
+                                          
+                                            <option value="MCOm">Mcom</option>
+                                            <option value="MSCIT">MSCIT</option>
+                                            <option value="MCA">MCA</option>
+                                        </select>
+                                        <label for="floatingSelect">Select Your Course</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" name="sem">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                        <label for="floatingSelect">Select Your Semester</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="place Your Address"
+                                            id="floatingTextarea" style="height: 150px;" name="address"></textarea>
+                                        <label for="floatingTextarea">Address</label>
+                                    </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" name="password" class="form-control" id="myInput">
+                                    
+                                        <input type="checkbox" class="form-check-input" onclick="myFunction()" id="exampleCheck1">
+                                        <label class="form-check-label" >Show Password</label>
+                                 
+                                </div>
+                               
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+                        </div>
+                    <%- include('footer.ejs') -%>

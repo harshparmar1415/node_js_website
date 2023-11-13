@@ -1,0 +1,57 @@
+<%- include('header.ejs') -%>
+
+
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Add Student</h6>
+                        
+                            <form action="/admin/sedit/<%= id %>" method="post" >
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Student Name</label>
+                                    <input type="text" name="sname" value="<%= sname %>" class="form-control" >
+                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Contact Number</label>
+                                    <input type="number" name="mobile" value="<%= mobile %>" class="form-control" >
+                                   
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" name="email" value="<%= email %>" class="form-control" >
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" name="course">
+                                          
+                                            <option value="MCOm">Mcom</option>
+                                            <option value="MSCIT">MSCIT</option>
+                                            <option value="MCA">MCA</option>
+                                        </select>
+                                        <label for="floatingSelect">Select Your Course</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select"  name="sem">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                        <label for="floatingSelect">Select Your Semester</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="place Your Address"
+                                            id="floatingTextarea" style="height: 150px;" name="address"><%= address %></textarea>
+                                        <label for="floatingTextarea">Address</label>
+                                    </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" name="password" value="<%= password %>" class="form-control" id="myInput">
+                                    
+                                        <input type="checkbox" class="form-check-input" onclick="myFunction()" id="exampleCheck1">
+                                        <label class="form-check-label" >Show Password</label>
+                                 
+                                </div>
+                               
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+                        </div>
+                    <%- include('footer.ejs') -%>

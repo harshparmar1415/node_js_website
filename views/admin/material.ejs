@@ -1,0 +1,49 @@
+<%- include('header.ejs') -%>
+
+                    
+
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Add Material</h6>
+                         
+                            
+                                <% if (messages.error) { %>
+                                <div class="alert alert-danger" role="alert"><%- messages.error %></div>
+                                <% } %>
+                            <form action="/admin/material" method="post"  enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Title</label>
+                                    <input type="text" name="title" class="form-control" >
+                                   
+                                </div>
+                               
+                                <div class="mb-3">
+                                 
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" name="course">
+                                          
+                                            <option value="MCOM">MCOM</option>
+                                            <option value="MSCIT">MSCIT</option>
+                                            <option value="MCA">MCA</option>
+                                        </select>
+                                        <label for="floatingSelect">Select Your Course</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" name="sem">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                        <label for="floatingSelect">Select Your Semester</label>
+                                    </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Material</label>
+                                        <input class="form-control bg-dark" type="file" name="image" id="formFile">
+                                    </div>
+                                <button type="submit" class="btn btn-primary">Add Material</button>
+                                <a href="/admin/show" class="btn btn-outline-info">Show All</a>
+                            </form>
+                        </div>
+                    <%- include('footer.ejs') -%>

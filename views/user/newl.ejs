@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Studentmaterial- managment system</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="/assets/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/assets/lib/owlcarousel/abc/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid d-none d-lg-block">
+        <div class="row align-items-center pt-5 px-xl-5 justify-content-center">
+<div class="col-lg-6">
+    <div class="card border-0">
+        <div class="card-header bg-light text-center p-4">
+            <h1 class="m-0">Sign Up Now</h1>
+        </div>
+        <div class="card-body  bg-primary p-5">
+            <form action="/user/login" method="post">
+             
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="myInput">
+                    
+                        <input type="checkbox" class="form-check-input" onclick="myFunction()" id="exampleCheck1">
+                        <label class="form-check-label" >Show Password</label>
+                 
+                </div>
+                <div>
+                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<script>
+    function myFunction() {
+      var x = document.getElementById("myInput");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+    </script>
+ <!-- JavaScript Libraries -->
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+ <script src="/assets/lib/easing/easing.min.js"></script>
+ <script src="/asstes/lib/owlcarousel/owl.carousel.min.js"></script>
+
+ <!-- Contact Javascript File -->
+ <script src="/assets/mail/jqBootstrapValidation.min.js"></script>
+ <script src="/assets/mail/contact.js"></script>
+
+ <!-- Template Javascript -->
+ <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
